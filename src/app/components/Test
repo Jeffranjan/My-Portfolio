@@ -1,0 +1,63 @@
+// const projectsData = [
+//   {
+//     id: 1,
+//     title: "Two Good Website",
+//     description: "Project One Description",
+//     img: "/images/my-projects/two-good-website.png",
+//     alt: ["All", "web"],
+//   },
+//   {
+//     id: 1,
+//     title: "Password Generator",
+//     description: "Project Two Description",
+//     img: "/images/my-projects/password-generator.png",
+//     alt: ["All", "web"],
+//   },
+//   {
+//     id: 1,
+//     title: "Japanese Food Website",
+//     description: "Project Three Description",
+//     img: "/images/my-projects/japanese-food-website.png",
+//     alt: ["All", "web"],
+//   },
+//   {
+//     id: 1,
+//     title: "Drum Kit",
+//     description: "Project Four Description",
+//     img: "/images/my-projects/drum-kit.png",
+//     alt: ["All", "web"],
+//   },
+//   {
+//     id: 1,
+//     title: "Dice Game",
+//     description: "Project Five Description",
+//     img: "/images/my-projects/dice-game.png",
+//     alt: ["All", "web"],
+//   },
+//   {
+//     id: 1,
+//     title: "DAO Website",
+//     description: "Project Six Description",
+//     img: "/images/my-projects/dao-website.png",
+//     alt: ["All", "web"],
+//   },
+// ];
+
+// const ProjectsSection = () => {
+//   return (
+//     <>
+//       <h2>My Projects</h2>
+//       <div>
+//         {projectsData.map((project) => (
+//           <ProjectCard
+//             key={project.id}
+//             title={project.title}
+//             description={project.description}
+//             imgURL={project.img}
+//             alt={project.alt}
+//           />
+//         ))}
+//       </div>
+//     </>
+//   );
+// };
