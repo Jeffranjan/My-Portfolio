@@ -10,6 +10,8 @@ const projectsData = [
     description: "A shopping website",
     image: "/images/projects/two-good-website.png",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/Jeffranjan/Two-Good",
+    previewUrl: "https://jeffranjan.github.io/Two-Good/",
   },
   {
     id: 2,
@@ -17,6 +19,8 @@ const projectsData = [
     description: "A website to Generate Passwords",
     image: "/images/projects/password-generator.png",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/Jeffranjan/Password-Generator",
+    previewUrl: "https://jeffranjan.github.io/Password-Generator/",
   },
   {
     id: 3,
@@ -24,13 +28,17 @@ const projectsData = [
     description: "Restaurent website to buy sushi",
     image: "/images/projects/japanese-food-website.png",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/Jeffranjan/japnesefood",
+    previewUrl: "https://jeffranjan.github.io/japnesefood/",
   },
   {
     id: 4,
-    title: "Dru Kit",
+    title: "Drum Kit",
     description: "We Website to play drums",
     image: "/images/projects/drum-kit.png",
     tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/Jeffranjan/DrumSet",
+    previewUrl: "https://jeffranjan.github.io/DrumSet/",
   },
   {
     id: 5,
@@ -38,6 +46,8 @@ const projectsData = [
     description: "A website to roll dices",
     image: "/images/projects/dice-game.png",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/Jeffranjan/Dice-Game",
+    previewUrl: "https://jeffranjan.github.io/Dice-Game/",
   },
   {
     id: 6,
@@ -45,6 +55,8 @@ const projectsData = [
     description: "A basic DAO Website",
     image: "/images/projects/dao-website.png",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/Jeffranjan/DAO-Website",
+    previewUrl: "https://jeffranjan.github.io/DAO-Website/",
   },
 ];
 const ProjectsSection = () => {
@@ -87,6 +99,9 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imgUrl={project.image}
+            previewUrl={project.previewUrl}
+            gitUrl={project.gitUrl}
+            tag={project.tag}
           />
         ))}
       </div>
