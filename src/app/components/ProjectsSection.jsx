@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
@@ -61,6 +62,8 @@ const projectsData = [
 ];
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
@@ -70,8 +73,19 @@ const ProjectsSection = () => {
     setTag(newTag);
   };
 
+  const cardVarients = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
-    <>
+    <section>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
@@ -92,20 +106,32 @@ const ProjectsSection = () => {
           isSelected={tag == "Mobile"}
         />
       </div>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            previewUrl={project.previewUrl}
-            gitUrl={project.gitUrl}
-            tag={project.tag}
-          />
+          <motion.li
+            key={index}
+            varients={cardVarients}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{
+              duration: 0.3,
+              delay: index * 0.4,
+            }}
+          >
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              previewUrl={project.previewUrl}
+              gitUrl={project.gitUrl}
+              tag={project.tag}
+            />
+          </motion.li>
         ))}
-      </div>
-    </>
+      </ul>
+    </section>
   );
 };
 

@@ -1,4 +1,3 @@
-""
 import React from "react";
 import GithubIcon from "../../../public/images/github-icon.svg";
 import LinkedinIcon from "../../../public/images/linkedin-icon.svg";

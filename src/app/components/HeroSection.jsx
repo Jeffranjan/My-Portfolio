@@ -1,14 +1,19 @@
 "use client";
-
-import react from "react";
+import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-7 place-self-center text-center sm:text-left"
+        >
           <h1 className="text-white max-w-2xl mb-4 lg:text-6xl text-4xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">
               Hello, I'm{" "}
@@ -16,9 +21,8 @@ const HeroSection = () => {
             <br />
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 "Ranjan",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                1000,
                 "Web Developer",
                 1000,
                 "Mobile Developer",
@@ -44,8 +48,13 @@ const HeroSection = () => {
               </span>
             </button>
           </div>
-        </div>
-        <div className="col-span-5 place-self-center mt-4 lg:mt-0">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-5 place-self-center mt-4 lg:mt-0"
+        >
           <div className="bg-[#181818] lg:w-[400px] lg:h-[400px] w-[250px] h-[250px] rounded-full relative overflow-hidden">
             <Image
               src="/images/hero-image.png"
@@ -55,7 +64,7 @@ const HeroSection = () => {
               height={300}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
