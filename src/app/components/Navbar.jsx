@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, Bars4Icon, XMarkIcon } from "@heroicons/react/24/solid";
 // import MenuOverlay from "./menuOverlay";
-const MenuOverlay = require("./menuOverlay");
+// const MenuOverlay = require("./menuOverlay");
 
 const Navlinks = [
   {
@@ -62,7 +62,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {navbarOpen ? <MenuOverlay links={Navlinks} /> : null}
+      {/* {navbarOpen ? <MenuOverlay links={Navlinks} /> : null} */}
     </nav>
   );
 };
