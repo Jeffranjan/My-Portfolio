@@ -36,7 +36,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base mb-6 sm:text-lg lg:text-xl">
-            Feel free to get in touch with me! Check our my CV from down here
+            Feel free to get in touch with me! Check out my CV from down here
           </p>
           <div>
             <button className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white px-6 py-3 rounded-full mr-4">
