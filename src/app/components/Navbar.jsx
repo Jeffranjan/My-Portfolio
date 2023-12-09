@@ -29,7 +29,11 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"
         >
-          LOGO
+          <img
+            className="h-12 w-12 rounded-full"
+            src="/images/rg-logo.png"
+            alt="logo"
+          />
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
