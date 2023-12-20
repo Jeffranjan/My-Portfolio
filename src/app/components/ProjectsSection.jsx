@@ -65,13 +65,13 @@ const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
-
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
 
   const cardVarients = {
     initial: {
