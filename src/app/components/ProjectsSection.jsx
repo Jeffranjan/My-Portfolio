@@ -25,12 +25,12 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "React Password Generator",
-    description: "For Password Generation",
-    image: "/images/projects/password-generator.png",
+    title: "React Route Website",
+    description: "react-router-dom with Github API",
+    image: "/images/projects/react-router.png",
     tag: ["All", "Mobile"],
-    gitUrl: "https://github.com/Jeffranjan/Mini-Docs",
-    previewUrl: "https://password-generator-zeta-inky.vercel.app",
+    gitUrl: "https://github.com/Jeffranjan/React-Router-Project",
+    previewUrl: "https://react-router-project-green.vercel.app",
   },
   {
     id: 4,
@@ -43,21 +43,21 @@ const projectsData = [
   },
   {
     id: 5,
+    title: "React Password Generator",
+    description: "For Password Generation",
+    image: "/images/projects/password-generator.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/Jeffranjan/Mini-Docs",
+    previewUrl: "https://password-generator-zeta-inky.vercel.app",
+  },
+  {
+    id: 6,
     title: "Drum Kit",
     description: "Play Drums with your keyboard",
     image: "/images/projects/drum-kit.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Jeffranjan/DrumSet",
     previewUrl: "https://jeffranjan.github.io/DrumSet/",
-  },
-  {
-    id: 6,
-    title: "Dice Game Website",
-    description: "Roll your dice and test your luck",
-    image: "/images/projects/dice-game.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/Jeffranjan/Dice-Game",
-    previewUrl: "https://jeffranjan.github.io/Dice-Game/",
   },
 ];
 const ProjectsSection = () => {
