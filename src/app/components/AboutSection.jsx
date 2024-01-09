@@ -18,16 +18,16 @@ const TAB_DATA = [
       </ul>
     ),
   },
-  {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Bachelor Of Computer Applications</li>
-        <li>Indra Gandhi National Institute of Open Learning</li>
-      </ul>
-    ),
-  },
+  // {
+  //   title: "Education",
+  //   id: "education",
+  //   content: (
+  //     <ul className="list-disc pl-2">
+  //       <li>Bachelor Of Computer Applications</li>
+  //       <li>Indra Gandhi National Institute of Open Learning</li>
+  //     </ul>
+  //   ),
+  // },
   {
     title: "Certifications",
     id: "certifications",
@@ -76,12 +76,12 @@ const AboutSection = () => {
             >
               Skills
             </TabButton>
-            <TabButton
+            {/* <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
               Education
-            </TabButton>
+            </TabButton> */}
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
