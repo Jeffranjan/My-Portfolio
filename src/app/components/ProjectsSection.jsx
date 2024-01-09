@@ -111,7 +111,7 @@ const ProjectsSection = () => {
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}
-            varients={cardVarients}
+            variants={cardVarients}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
             transition={{
