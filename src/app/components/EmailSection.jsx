@@ -56,7 +56,7 @@ const EmailSection = () => {
               type="email"
               id="email"
               className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
-              placeholder="jacob@google.com"
+              placeholder="Or directly email me at Ranjanguptajeff@gmail.com"
               required
             />
           </div>
