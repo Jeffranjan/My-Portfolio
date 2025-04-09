@@ -1,27 +1,47 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import GithubIcon from "../../../public/images/github-icon.svg";
 import LinkedinIcon from "../../../public/images/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
-  const handleSubmit = (e) => {
+  const [formStatus, setFormStatus] = useState({ type: "", message: "" });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
+    setFormStatus({ type: "loading", message: "Sending..." });
+
+    const formData = {
       email: e.target.email.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
 
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setFormStatus({
+          type: "success",
+          message: "Message sent successfully!",
+        });
+        e.target.reset();
+      } else {
+        throw new Error(data.error || "Failed to send message");
+      }
+    } catch (error) {
+      setFormStatus({ type: "error", message: error.message });
+    }
   };
 
   return (
@@ -35,16 +55,24 @@ const EmailSection = () => {
           to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <Link
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={GithubIcon} alt="github" />
           </Link>
-          <Link href="linkedin.com">
+          <Link
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={LinkedinIcon} alt="linkedin" />
           </Link>
         </div>
       </div>
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -55,7 +83,8 @@ const EmailSection = () => {
             <input
               type="email"
               id="email"
-              className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
+              name="email"
+              className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Or directly email me at Ranjanguptajeff@gmail.com"
               required
             />
@@ -70,30 +99,47 @@ const EmailSection = () => {
             <input
               type="text"
               id="subject"
-              className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
+              name="subject"
+              className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Just saying hi"
+              required
             />
           </div>
           <div className="mb-6">
             <label
-              htmlFor="subject"
+              htmlFor="message"
               className="block mb-2 text-sm font-medium text-white"
             >
               Message
             </label>
             <textarea
               id="message"
-              className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
+              name="message"
+              className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Let's talk about..."
+              required
             />
           </div>
+          {formStatus.message && (
+            <div
+              className={`mb-4 p-2 rounded ${
+                formStatus.type === "success"
+                  ? "bg-green-500"
+                  : formStatus.type === "error"
+                  ? "bg-red-500"
+                  : "bg-blue-500"
+              }`}
+            >
+              {formStatus.message}
+            </div>
+          )}
           <div className="mb-6">
             <button
               type="submit"
               className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              disabled={formStatus.type === "loading"}
             >
-              {" "}
-              Send message{" "}
+              {formStatus.type === "loading" ? "Sending..." : "Send message"}
             </button>
           </div>
         </form>
