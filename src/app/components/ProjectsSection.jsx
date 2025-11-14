@@ -7,6 +7,16 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
+    title: "Mern Ecommerce Website with admin panel",
+    description:
+      "A full stack ecommerce website built using React, Redux, Node.js, Express, MongoDB, and Tailwind CSS",
+    image: "/images/projects/e-com.jpeg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Jeffranjan/E-Com-Laptop-Store.git",
+    previewUrl: "https://e-com-laptop-store-front-end.onrender.com",
+  },
+  {
+    id: 2,
     title: "Two Good Website",
     description: "Shop your favourite products",
     image: "/images/projects/two-good-website.png",
@@ -15,16 +25,16 @@ const projectsData = [
     previewUrl: "https://jeffranjan.github.io/Two-Good/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Mini Docs App",
     description: "Storing Docs and Notes",
     image: "/images/projects/mini-docs.png",
     tag: ["All", "Mobile"],
-    gitUrl: "https://github.com/Jeffranjan/Password-Generator",
+    gitUrl: "https://github.com/Jeffranjan/Password- ",
     previewUrl: "https://mini-docs-liart.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "React Route Website",
     description: "react-router-dom with Github API",
     image: "/images/projects/react-router.png",
@@ -33,7 +43,7 @@ const projectsData = [
     previewUrl: "https://react-router-project-green.vercel.app",
   },
   {
-    id: 4,
+    id: 5,
     title: "A Sushi Website",
     description: "Restaurent website to buy sushi",
     image: "/images/projects/japanese-food-website.png",
@@ -42,7 +52,7 @@ const projectsData = [
     previewUrl: "https://jeffranjan.github.io/japnesefood/",
   },
   {
-    id: 5,
+    id: 6,
     title: "React Password Generator",
     description: "For Password Generation",
     image: "/images/projects/password-generator.png",
@@ -51,7 +61,7 @@ const projectsData = [
     previewUrl: "https://password-generator-zeta-inky.vercel.app",
   },
   {
-    id: 6,
+    id: 7,
     title: "Drum Kit",
     description: "Play Drums with your keyboard",
     image: "/images/projects/drum-kit.png",
